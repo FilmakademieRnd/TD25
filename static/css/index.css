@@ -24,6 +24,7 @@ body {
 }
 
 .teaser {
+  background: #f1e8e2 !important;
   font-family: 'Google Sans', sans-serif;
 }
 
@@ -133,5 +134,68 @@ body {
   font-size: smaller;
 }
 
+.section-divider {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #b47865, transparent);
+  margin: 4rem 0;
+  border-radius: 2px;
+}
 
+.decorative-break {
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 2rem;
+  color: #b47865;
+  opacity: 0.6;
+}
+
+.section-spacing {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.hero.teaser {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  margin: 3rem 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.content-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 2rem 0;
+}
+
+.watercolor-accent {
+  border-left: 4px solid #b47865;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+
+.section-header {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding-top: 3rem;
+}
+}
+
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #b47865, #e0b9a7);
+  border-radius: 2px;
+}
+
+.hero.teaser.section-spacing {
+  background-color: #f0dfd6; 
+}
 

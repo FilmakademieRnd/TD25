@@ -20,9 +20,10 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  
+  
 </head>
 <body>
-
 
   <section class="hero">
     <div class="hero-body">
@@ -33,14 +34,14 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Tanja Nuijten</a>, </span>
+                <a href="https://tanja-nuijten.com/" target="https://tanja-nuijten.com/">Tanja Nuijten</a>, </span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Vincent Maurer</a>, </span>
+                  <a href="https://vincentmaurer.de/" target="https://vincentmaurer.de/">Vincent Maurer</a>, </span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Hannes Sturm</a>, 
+                    <a href="https://dersturm.github.io/" target="https://dersturm.github.io/">Hannes Sturm</a>, 
                   </span>
                   <span class="author-block">
-                    <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Avina Graefe</a>
+                    <a href="https://www.linkedin.com/in/avina-graefe/" target="https://www.linkedin.com/in/avina-graefe/">Avina Graefe</a>
                   </span>
                   </div>
 
@@ -57,16 +58,30 @@
 </section>
 
 
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/comparison_split.mp4"
+        type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="hero teaser section-spacing">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            The animated short film Sensual explores a novel workflow for hand-painted watercolor animation, integrating AI-based frame interpolation techniques to enhance efficiency while preserving artistic integrity. Traditional hand-painted animation is labor-intensive, requiring manual creation of inbetween frames. We investigated AI-driven methods to bridge the gap between artistry and automation.
-          </p>
+        <div class="content-card">
+          <h2 class="title is-3 section-header">Abstract</h2>
+          <div class="content has-text-justified watercolor-accent">
+            <p>
+              The animated short film Sensual explores a novel workflow for hand-painted watercolor animation, integrating AI-based frame interpolation techniques to enhance efficiency while preserving artistic integrity. Traditional hand-painted animation is labor-intensive, requiring manual creation of inbetween frames. We investigated AI-driven methods to bridge the gap between artistry and automation.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -75,18 +90,149 @@
 <!-- End paper abstract -->
 
 
-  <footer class="footer">
+<!-- Teaser video-->
+<section class="hero teaser section-spacing">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-header">Outline and painted animation</h2>
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/base_anim.mp4"
+        type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+<!-- Evaluation -->
+<section class="hero teaser section-spacing">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content-card">
+          <h2 class="title is-3 section-header">Evaluation</h2>
+          <div class="content has-text-justified watercolor-accent">
+            <p>
+              We evaluated various interpolation models for their suitability in maintaining the organic quality of watercolor animation (see comparison). As a base for the tests, one shot was animated as a 2D outline animation, then every third frame was printed and painted with watercolor. We either used the 2D outline animation to guide the interpolation, or interpolated between the painted images directly. We noticed three interpolation issues we had to address in our workflow: blurriness, morphing artifacts and pulsing, a rhythmic inconsistency where linear interpolation movements disrupt the non-linear flow of the animation (see supplementary video). Ultimately we based our workflow on RIFE (Real-Time Intermediate Flow Estimation), due to its high visual consistency, combined with compositing. Its integration in the compositing tool Nuke made it easy to implement into our pipeline. But, like other models, it introduced pulsing artifacts, addressed in our proposed workflow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Evaluation -->
+
+
+
+<!-- Teaser video-->
+<section class="hero teaser section-spacing">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-header">Comparison of interpolation techniques</h2>
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/comparison.mp4"
+        type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<div class="section-divider"></div>
+
+<!-- Workflow -->
+<section class="hero teaser section-spacing">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content-card">
+          <h2 class="title is-3 section-header">Workflow</h2>
+          <div class="content has-text-justified">
+            <div class="watercolor-accent">
+              <p>
+                We realized that reducing framerate (8fps instead of 12fps), and reducing from two to one inbetweens, helped to mitigate pulsing and led to a more fluid perception of movement.
+              </p>
+            </div>
+            <ol style="padding-left: 2rem; line-height: 1.8;">
+              <li><strong>Animation and Painting:</strong> Every third frame is hand-painted after outline animation.</li>
+              <li><strong>Denoise and stabilization</strong></li>
+              <li><strong>Interpolation:</strong> RIFE generates inbetween frames, randomly switching between three variants: default, mirrored and altered settings</li>
+              <li><strong>Compositing Enhancements:</strong> Random transforms, flickering, brush and paper texture</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Workflow -->
+
+
+<!-- Teaser video-->
+<section class="hero teaser section-spacing">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-header">Workflow breakdown</h2>
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/breakdown.mp4"
+        type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+<!-- Conclusion -->
+<section class="hero teaser section-spacing">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content-card">
+          <h2 class="title is-3 section-header">Conclusion</h2>
+          <div class="content has-text-justified watercolor-accent">
+            <p>
+              By strategically combining AI interpolation with traditional compositing, we achieved a substantial reduction in production time (200 working days to 100 of painting time) without compromising the artistic vision. This workflow can serve as a foundation for future hand-painted animation projects. We believe that AI should act as an augmentative tool for artists rather than a replacement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Conclusion -->
+
+
+<!-- Paper poster -->
+<section class="hero is-small is-light section-spacing">
+  <div class="hero-body">
+    <div class="container">
+      <div class="content-card">
+        <h2 class="title section-header">Poster</h2>
+        <iframe src="static/pdfs/SEN_SIGGRAPHPoster.pdf" width="100%" height="800" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: none;"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<!--End paper poster -->
+
+
+
+<footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-
         </div>
       </div>
     </div>
